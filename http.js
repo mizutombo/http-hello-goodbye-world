@@ -13,17 +13,17 @@ const server = http.createServer((req, res) => {
   else if (req.url === '/happy_cow') {
     res.write('hello wonderful world!');
     console.log(cowsay.say({
-      text : "hello wonderful world!",
-      e : "^^",
-      T : "U "
+      text : 'hello wonderful world!',
+      e : '^^',
+      T : 'U '
     }));
     res.end();
   }
   else if (req.url === '/angry_cow') {
     res.write('eat cow pies and die!!!');
     console.log(cowsay.say({
-      text : "eat cow pies and die!!!",
-      e : "@@"
+      text : 'eat cow pies and die!!!',
+      e : '@@'
     }));
     res.end();
   }
