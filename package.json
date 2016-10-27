@@ -2,13 +2,14 @@
   "name": "http-hello-goodbye-world",
   "version": "1.0.0",
   "description": "",
-  "main": "tcp.js",
+  "main": "http.js",
   "scripts": {
+    "start": "npm run test && node index.js",
     "pretest": "npm run lint",
     "test": "npm run test:run",
     "test:run": "mocha",
     "test:watch": "npm run test:run -- -w",
-    "lint": "eslint"
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,7 @@
     "http",
     "server"
   ],
-  "author": "Tom Shultlz",
+  "author": "Tom Shultz",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/mizutombo/http-hello-goodbye-world/issues"

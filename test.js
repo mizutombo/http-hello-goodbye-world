@@ -1,4 +1,4 @@
-// This assignment does not require tests.
+// This Lab1 assignment does not require tests.
 // Therefore, to satisfy npm test requirements for mocha, created fake test.
 const assert = require('chai').assert;
 
