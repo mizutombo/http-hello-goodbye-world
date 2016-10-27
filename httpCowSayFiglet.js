@@ -8,7 +8,7 @@ const indexHtml = fs.createReadStream('index.html');
 const server = http.createServer((req, res) => {
   console.log(req.url);
   res.statusCode = 200; // http status code 200 = okay
-  if (req.url === '/') {
+  if (req.url === '') {
     indexHtml.pipe(res);
   }
   else if (req.url === '/happy_cow') {
@@ -36,11 +36,17 @@ const server = http.createServer((req, res) => {
       verticalLayout: 'default'
     }, function(err, data) {
       if (err) {
-        console.log('400 - gremlins');
+        console.log('gremlins!');
         return;
       }
       console.log(data);
     });
+    res.end();
+  }
+  else {
+    if (req.url === '/') {
+      res.write('404 - Not Found ==> try URLs ... halloween or happy_cow or angry_cow');
+    }
     res.end();
   }
 });
