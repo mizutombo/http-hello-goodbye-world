@@ -11,6 +11,7 @@ const server = http.createServer((req, res) => {
     indexHtml.pipe(res);
   }
   if (req.url === '/halloween') {
+    res.write('happy halloween!');
     figlet.text('Boo!', {
       font: 'Ghost',
       horizontalLayout: 'default',
@@ -18,7 +19,6 @@ const server = http.createServer((req, res) => {
     }, function(err, data) {
       if (err) {
         console.log('400 - gremlins');
-        console.dir(err);
         return;
       }
       console.log(data);
