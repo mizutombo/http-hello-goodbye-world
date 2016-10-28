@@ -1,5 +1,7 @@
 const http = require('http');
 const fs = require('fs');
+const parseUrl = require('url').parse;
+const qs = require('querystring');
 const cowsay = require('cowsay');
 const figlet = require('figlet');
 const indexHtml = fs.createReadStream('index.html');
@@ -43,9 +45,19 @@ const server = http.createServer((req, res) => {
     });
     res.end();
   }
+
+  // url query parameter still non-functional
+  const url = parseUrl(req.url);
+  else if (url.pathname === '/spider') {
+    const query = qs.parse(url.query);
+    const type = query.format === 'text' ? 'text/plain' : 'application/json';
+    res.setHeader('Content-Type', type);
+    res.end(JSON.stringify({docid: 'spiders'}));
+  }
+
   else {
     if (req.url === '/') {
-      res.write('404 - Not Found ==> try URLs ... halloween or happy_cow or angry_cow');
+      res.write('404 - Not Found ==> try URLs ... /halloween or /happy_cow or /angry_cow');
     }
     res.end();
   }
