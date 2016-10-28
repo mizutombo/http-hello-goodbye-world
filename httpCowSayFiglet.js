@@ -48,11 +48,11 @@ const server = http.createServer((req, res) => {
 
   // url query parameter still non-functional
   const url = parseUrl(req.url);
-  else if (url.pathname === '/spider') {
+  if (url.pathname === '/spider') {
     const query = qs.parse(url.query);
     const type = query.format === 'text' ? 'text/plain' : 'application/json';
     res.setHeader('Content-Type', type);
-    res.end(JSON.stringify({docid: 'spiders'}));
+    res.end(JSON.stringify({docid: 'spiders from Mars'}));
   }
 
   else {
