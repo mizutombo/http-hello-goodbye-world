@@ -4,7 +4,7 @@
   "description": "",
   "main": "http.js",
   "scripts": {
-    "start": "npm run test && node index.js",
+    "start": "npm run test && node httpCowSayFiglet.js",
     "pretest": "npm run lint",
     "test": "npm run test:run",
     "test:run": "mocha",
@@ -26,7 +26,9 @@
   },
   "homepage": "https://github.com/mizutombo/http-hello-goodbye-world#readme",
   "dependencies": {
-    "cowsay": "^1.1.8"
+    "cowsay": "^1.1.8",
+    "figlet": "^1.2.0",
+    "url": "^0.11.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
