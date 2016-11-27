@@ -2,9 +2,9 @@
   "name": "http-hello-goodbye-world",
   "version": "1.0.0",
   "description": "",
-  "main": "http-server.js",
+  "main": "httpCowSayFiglet.js",
   "scripts": {
-    "start": "npm run test && node http-server.js",
+    "start": "npm run test && node httpCowSayFiglet.js",
     "pretest": "npm run lint",
     "test": "mocha",
     "test:watch": "mocha -- -w",
@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
     "eslint": "^3.8.1",
     "mocha": "^3.1.2",
     "nodemon": "^1.11.0"

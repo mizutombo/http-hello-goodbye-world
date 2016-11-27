@@ -7,7 +7,8 @@ const figlet = require('figlet');
 const indexHtml = fs.createReadStream('index.html');
 
 // create new instance of http server
-module.exports = http.createServer((req, res) => {
+// module.exports = http.createServer((req, res) => {
+const server = http.createServer((req, res) => {
   console.log(req.url);
   res.statusCode = 200; // http status code 200 = okay
 
@@ -64,8 +65,8 @@ module.exports = http.createServer((req, res) => {
   }
 });
 
-// const port = 8080;
-// server.listen(port, err => {
-//   if(err) console('error', err);
-//   else console.log('http server listening on port', port);
-// });
+const port = 8080;
+server.listen(port, err => { // eslint-disable-line
+  if(err) console('error', err);
+  else console.log('http server listening on port', port);
+});

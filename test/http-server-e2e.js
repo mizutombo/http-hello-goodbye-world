@@ -2,7 +2,7 @@ const chai = require('chai');
 const chaiHttp = require('chai-http');
 chai.use(chaiHttp);
 const assert = chai.assert;
-const server = require('../http-server');
+const server = require('../httpCowSayFiglet');
 
 describe('test my httpCowSayFiglet server', () => {
 
@@ -13,7 +13,7 @@ describe('test my httpCowSayFiglet server', () => {
       .get('/happy_cow') // error ... app.address is not a function
       .end((err, res) => {
         if (err) return done(err);
-        assert.strictEqual(res.body, 'hello wonderful world');
+        assert.strictEqual(res.text, 'hello wonderful world');
         done();
       });
   });
@@ -23,7 +23,7 @@ describe('test my httpCowSayFiglet server', () => {
       .get('/angry_cow') // error ... app.address is not a function
       .end((err, res) => {
         if (err) return done(err);
-        assert.strictEqual(res.body, 'eat cow pies and die!!!');
+        assert.strictEqual(res.text, 'eat cow pies and die!!!');
         done();
       });
   });
@@ -33,7 +33,7 @@ describe('test my httpCowSayFiglet server', () => {
       .get('/halloween') // error ... app.address is not a function
       .end((err, res) => {
         if (err) return done(err);
-        assert.strictEqual(res.body, 'happy halloween');
+        assert.strictEqual(res.text, 'happy halloween');
         done();
       });
   });
